@@ -66,12 +66,12 @@ public class InternationalFlight extends JFrame
 		CBTo.setBounds(120,100,125,20);
 
 		LBookingDate.setBounds(14,160,100,20);
-		TFBookingDate.setBounds(120,160,125,20);
+		TFBookingDate.setBounds(120,160,125,30);
 		LDate.setBounds(250,160,125,20);
 
 		LClass.setBounds(20,220,100,20);
 		LUser.setBounds(20,280,100,20);
-		TFUser.setBounds(120,280,125,20);
+		TFUser.setBounds(120,280,125,30);
 		CBClass.setBounds(120,220,125,20);
 
 		BFindFlight.setBounds(50,350,150,25);
