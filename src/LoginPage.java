@@ -52,22 +52,16 @@ public class LoginPage extends JFrame
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-	//ImageIcon img1 =  new ImageIcon("img/economic.jpg");
-	//ImageIcon img2 = new ImageIcon("img/business.jpg");
-	//ImageIcon img3 = new ImageIcon("img/economic1.jpg");
-	//ImageIcon img4 = new ImageIcon("img/business1.jpg");
 	
 	JLabel classes = new JLabel("Classes Available");
 	JButton LEconomic = new JButton("Economic");
 	JButton LBusiness = new JButton("Business");
-	//JLabel LEconomic1 = new JLabel("Economic");
-	//JLabel LBusiness1 = new JLabel("Business");
 
 	public LoginPage(String name)
 	{
 		
 		super(name);
-		//WindowUtilities.setNativeLookAndFeel();
+		WindowUtilities.setNativeLookAndFeel();
 		setPreferredSize(new Dimension(796,572));
 		PFlightTypes.setBackground(Color.DARK_GRAY);
 		PLogin.setBackground(Color.LIGHT_GRAY);
@@ -92,8 +86,8 @@ public class LoginPage extends JFrame
 
 		LUserName.setBounds(40, 100, 100, 21);
 		LPassword.setBounds(40, 140, 100, 21);
-		TFUserName.setBounds(160, 100, 100, 21);
-		TPPassword.setBounds(160, 140, 100, 21);
+		TFUserName.setBounds(160, 100, 100, 30);
+		TPPassword.setBounds(160, 140, 100, 30);
 		BLogin.setBounds(160, 200, 100,25);
 
 		LDomesticFlight1.setBounds(45, 60, 200, 20);
