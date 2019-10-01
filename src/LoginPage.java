@@ -1,12 +1,13 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import img.Register;
+
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
-import javax.swing.text.*;
 
 public class LoginPage extends JFrame
 {
@@ -31,7 +32,7 @@ public class LoginPage extends JFrame
 	JTextField TFUserName;
 	JPasswordField TPPassword;
 
-	JButton BLogin;
+	JButton BLogin,NewUser;
 
 	final Object[] col1 ={ "From", "To", "Price", "Time" };
 	//final Object[] col2 = { "From", "To", "Price", "Time" };
@@ -51,7 +52,6 @@ public class LoginPage extends JFrame
 	JScrollPane JSP2 = new JScrollPane(TInternationalFlight, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP3 = new JScrollPane(TDomesticFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
 	
 	JLabel classes = new JLabel("Classes Available");
 	JButton LEconomic = new JButton("Economic");
@@ -83,12 +83,14 @@ public class LoginPage extends JFrame
 		TFUserName = new JTextField(10);
 		TPPassword = new JPasswordField(10);
 		BLogin = new JButton("Sign In");
+		NewUser = new JButton("Register");
 
 		LUserName.setBounds(40, 100, 100, 21);
 		LPassword.setBounds(40, 140, 100, 21);
 		TFUserName.setBounds(160, 100, 100, 30);
 		TPPassword.setBounds(160, 140, 100, 30);
 		BLogin.setBounds(160, 200, 100,25);
+		NewUser.setBounds(160,250,100,25);
 
 		LDomesticFlight1.setBounds(45, 60, 200, 20);
 		LInternationalFlight1.setBounds(45, 100, 200, 20);
@@ -98,6 +100,7 @@ public class LoginPage extends JFrame
 		PLogin.add(LPassword);
 		PLogin.add(TPPassword);
 		PLogin.add(BLogin);
+		PLogin.add(NewUser);
 
 		PFlightDetails.add(JSP1);
 		PFlightDetails.add(JSP2);
@@ -163,6 +166,7 @@ public class LoginPage extends JFrame
 		LEconomic.addMouseListener(new mouse2(this, false));
 
 		BLogin.addActionListener(new button1(this));
+		NewUser.addActionListener(new action());
 	}
 
 	public static void main(String args[])
@@ -170,14 +174,21 @@ public class LoginPage extends JFrame
 		new LoginPage("Airline Reservation System");
 	}
 }
+class action implements ActionListener
+{	
 
+	public void actionPerformed(ActionEvent e) {
+		new Register();
+	}
+	
+}
 
 class button1 implements ActionListener
 {
 	LoginPage type;
-	char[] cCheck, cPassword={'a','d','m','i','n','\0'};
+	//char[] cCheck, cPassword={'a','d','m','i','n','\0'};
 	JFrame f;
-	String sCheck,sCheck1="admin";
+	//String sCheck,sCheck1="admin";
 
 	public button1(LoginPage type)
 	{
@@ -185,9 +196,37 @@ class button1 implements ActionListener
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		cCheck=type.TPPassword.getPassword();
-		sCheck = type.TFUserName.getText();
-		if ((sCheck1.equals(sCheck)) && check())
+		
+		String record = null;
+		//cCheck=type.TPPassword.getPassword();
+		//sCheck = type.TFUserName.getText();
+		try {
+		FileReader in = new FileReader("testout.txt");
+		BufferedReader br = new BufferedReader(in);
+		String user = type.TFUserName.getText();
+		//char[] pass = type.TPPassword.getPassword();
+		
+		while((record = br.readLine()) != null) {
+			if(user.contentEquals(record)) {
+				type.PLogin.add(type.LDomesticFlight1);
+				type.PLogin.add(type.LInternationalFlight1);
+
+				type.PLogin.remove(type.LUserName);
+				type.PLogin.remove(type.TFUserName);
+				type.PLogin.remove(type.LPassword);
+				type.PLogin.remove(type.TPPassword);
+				type.PLogin.remove(type.BLogin);
+
+				type.c.repaint();
+			}
+			else
+			{
+			JOptionPane.showMessageDialog(null, "Invalid username or password. Try again");
+			}
+		}
+		}
+		catch(IOException s) {s.getCause();}
+		/*if ((sCheck1.equals(sCheck)) && check())
 		{
 			type.PLogin.add(type.LDomesticFlight1);
 			type.PLogin.add(type.LInternationalFlight1);
@@ -199,13 +238,10 @@ class button1 implements ActionListener
 			type.PLogin.remove(type.BLogin);
 
 			type.c.repaint();
-		}
-		else
-		{
-			JOptionPane.showMessageDialog(null, "Invalid username or password. Try again");
-		}
+		}*/
+		
 	}
-	public boolean check()
+	/*public boolean check()
 	{
 		if (cCheck.length >= 6 || cCheck.length < 4)
 			return false;
@@ -215,7 +251,7 @@ class button1 implements ActionListener
 				return false;
 		}
 		return true;
-	}
+	}*/
 }
 
 class mouse1 extends MouseAdapter
