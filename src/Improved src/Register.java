@@ -7,12 +7,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Register extends JFrame {
+	
 
 		JTextField tfname;
 		JPasswordField tfpass1, tfpass2;
 
-		public Register() {
+		public Register(String title) {
 			
+		super(title);	
 		Container c = getContentPane();
 		JPanel reg = new JPanel(null);
 		JButton CreateAcc = new JButton("Create Account");
@@ -54,7 +56,7 @@ public class Register extends JFrame {
 		}
 		
 		public static void main(String[] args) {
-			new Register();
+			new Register("Register page");
 		}
 		
 }

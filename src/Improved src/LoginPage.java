@@ -167,7 +167,7 @@ class action implements ActionListener
 {	
 
 	public void actionPerformed(ActionEvent e) {
-		new Register();
+		new Register("Register page");
 	}
 	
 }
