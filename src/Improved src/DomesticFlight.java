@@ -9,7 +9,6 @@ public class DomesticFlight extends JFrame
 	JComboBox CBFrom, CBTo, CBClass, CBAdult, CBChildren, CBInfant;
 	JLabel LFrom, LTo, LBookingDate, LClass, LAdult, LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes,LUser;
 	JTextField TFBookingDate,TFUser;
-	Icon img1, img2;
 	JButton BFindFlight;
 	JPanel PPanel1, PPanel2;
 
@@ -142,7 +141,7 @@ public class DomesticFlight extends JFrame
 		PPanel2.add(CBInfant);
 
 		PPanel2.add(LNotes);
-
+		Save1 save1;
 		PPanel2.setBackground(Color.DARK_GRAY);
 
 		c.add(PPanel2,BorderLayout.EAST);
@@ -163,7 +162,7 @@ public class DomesticFlight extends JFrame
 class button3 implements ActionListener
 {
 	DomesticFlight type;
-	LoginPage type1;
+	LoginPage type1;Save1 save1;
 	button3(DomesticFlight type, LoginPage type1)
 	{
 		this.type = type;

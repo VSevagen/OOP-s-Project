@@ -10,9 +10,9 @@ public class PrintTicket1 extends JFrame
 		c.setLayout(new BorderLayout());
 
 
-		JPanel Panel2 = new JPanel(null);
+		JPanel Panel = new JPanel(null);
 
-		Panel2.setPreferredSize(new Dimension(500,200));
+		Panel.setPreferredSize(new Dimension(500,200));
 
 		JLabel LTitle = new JLabel("AirLine Ticket");
 		LTitle.setForeground(Color.decode("#C71585"));
@@ -68,31 +68,31 @@ public class PrintTicket1 extends JFrame
 		LAva.setBounds(500,505,300,20);
 
 
-		Panel2.add(LTitle);
-		Panel2.add(LFrom);
-		Panel2.add(LTo);
-		Panel2.add(LClass);
-		Panel2.add(LBookingDate);
-		Panel2.add(LAdult);
-		Panel2.add(LChildren);
-		Panel2.add(LInfant);
-		Panel2.add(LPrice);
-		Panel2.add(LTime);
+		Panel.add(LTitle);
+		Panel.add(LFrom);
+		Panel.add(LTo);
+		Panel.add(LClass);
+		Panel.add(LBookingDate);
+		Panel.add(LAdult);
+		Panel.add(LChildren);
+		Panel.add(LInfant);
+		Panel.add(LPrice);
+		Panel.add(LTime);
 
-		Panel2.add(LWishes);
+		Panel.add(LWishes);
 
-		Panel2.add(LTicketNo);
-		Panel2.add(LBookedBy);
-		Panel2.add(LEmpty);
-		Panel2.add(LDemo);
-		Panel2.add(LNotes);
+		Panel.add(LTicketNo);
+		Panel.add(LBookedBy);
+		Panel.add(LEmpty);
+		Panel.add(LDemo);
+		Panel.add(LNotes);
 
-		Panel2.add(LVeera);
-		Panel2.add(LAva);
+		Panel.add(LVeera);
+		Panel.add(LAva);
 
-		Panel2.setBackground(Color.decode("#DFD6D4"));
+		Panel.setBackground(Color.decode("#DFD6D4"));
 
-		c.add(Panel2, BorderLayout.CENTER);
+		c.add(Panel, BorderLayout.CENTER);
 
 
 		//pack();

@@ -13,6 +13,4 @@ public class WindowUtilities
 			System.out.println("Error setting native LAF: " + e);
 		}
 	}
-//UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-//UIManager.setLookAndFeel( "com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 }

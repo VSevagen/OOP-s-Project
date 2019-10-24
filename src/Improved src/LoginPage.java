@@ -1,5 +1,9 @@
-import javax.swing.*;
+//Airline Reservation System 																														
+//Sevagen Veerasamy and Avanish K A
+//OOPS Project 2019
 
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
@@ -17,7 +21,6 @@ public class LoginPage extends JFrame
 	JSeparator s = new JSeparator(JSeparator.HORIZONTAL);
 	
 	public boolean bCheck=true;
-	
 	JLabel FlightType = new JLabel("Types of Flights");
 	JButton LDomesticFlight = new JButton("Domestic Flights");
 	JButton LInternationalFlight = new JButton("International Flights");
@@ -51,8 +54,8 @@ public class LoginPage extends JFrame
 	JScrollPane JSP4 = new JScrollPane(TInternationalFlight1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	
 	JLabel classes = new JLabel("Classes Available");
-	JButton LEconomic = new JButton("Economic");
-	JButton LBusiness = new JButton("Business");
+	JButton LEconomic = new JButton("Business");
+	JButton LBusiness = new JButton("Economic");
 
 	public LoginPage(String name)
 	{
@@ -89,8 +92,8 @@ public class LoginPage extends JFrame
 		BLogin.setBounds(160, 200, 100,25);
 		NewUser.setBounds(160,250,100,25);
 
-		LDomesticFlight1.setBounds(45, 60, 200, 20);
-		LInternationalFlight1.setBounds(45, 100, 200, 20);
+		LDomesticFlight1.setBounds(35, 60, 230, 20);
+		LInternationalFlight1.setBounds(35, 100, 230, 20);
 
 		PLogin.add(LUserName);
 		PLogin.add(TFUserName);

@@ -26,11 +26,11 @@ public class Register extends JFrame {
 		tfpass2 = new JPasswordField(10);
 		
 		name.setBounds(50, 20, 125, 25);
-		tfname.setBounds(200,20,125,35);
-		confirm.setBounds(50,120,125,25);
-		password.setBounds(50,70,125,25);
-		tfpass1.setBounds(200,70,125,35);
-		tfpass2.setBounds(200,120,125,35);
+		tfname.setBounds(220,20,125,35);
+		confirm.setBounds(50,120,150,25);
+		password.setBounds(50,70,150,25);
+		tfpass1.setBounds(220,70,125,35);
+		tfpass2.setBounds(220,120,125,35);
 		CreateAcc.setBounds(140,200,125,25);
 
 		

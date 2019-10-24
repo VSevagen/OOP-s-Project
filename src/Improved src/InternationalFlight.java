@@ -9,7 +9,6 @@ public class InternationalFlight extends JFrame
 	JComboBox CBFrom, CBTo, CBClass, CBAdult, CBChildren, CBInfant;
 	JLabel LFrom, LTo, LBookingDate, LClass, LAdult, LChildren, LInfant, LBookingDetails, LPassengerDetails, LDate, LImg1, LImg2, LNotes,LUser;
 	JTextField TFBookingDate,TFUser;
-	Icon img1, img2;
 	JButton BFindFlight;
 	JPanel PPanel1, PPanel2;
 
